@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Blog{% endblock %}</title>
+        <link rel="icon" href="{{asset('icons/fav_icon.png')}}">
+        {% block stylesheets %}
+            {# <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> #}
+            {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> #}
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Syne:wght@500&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{asset('css/style.css')}}">
+            <link rel="stylesheet" href="{{asset('css/calendarView.css')}}">
+
+        {% endblock %}
+
+        {% block javascripts %}
+{# {% block importmap %}{{ importmap('app') }}{% endblock %} #}
+        {% endblock %}
+    </head>
+    <body class="body">     
+            {% block header %}
+            <header>
+            <div>
+            <img src="{{asset('img/logo.png')}}" alt="logo">
+        </div>
+        <div class="title">
+            <h1><a href="/">Calendrier</a></h1>
+        </div>
+        
+            
+                <a href="{{path('app_login')}}">
+                <img src="{{asset('img/compte.png')}}" alt="connexion">
+                </a>
+        </div>
+        </header>
+            {% endblock %}
+            
+           
+            {% block body %}
+            {% endblock %}
+            {% block footer %}
+            <hr>
+            <footer>
+            {% if app.user %}
+                <p class="footer_left">Connecté en tant que <strong>{{app.user.pseudo}}</strong>
+            {% endif %}
+            &copy; 2023 Wlad-dev</p>
+            <p class="footer_right"><a href="#">Mon compte</a></p>
+            </footer>
+            {% endblock %}
+        </div>
+    </body>
+</html>

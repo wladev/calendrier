@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ALL */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: rgb(216, 255, 159); */
+    height: 100vh;
+    margin: 0;
+    padding: 30px;
+    font-family: 'Mea Culpa', cursive, Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* HEADER */
+
+header a{
+    color: rgb(47, 255, 186);
+}
+.title h1{
+    margin: 0;
+    font-size: 8vw ;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header div{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+header img {
+    width: 10vw;
+    height: auto;
+}
+
+.title{
+    display: flex;
+    text-align: center;
+    font-family: 'Mea Culpa', cursive, Verdana, Geneva, Tahoma, sans-serif;
+}
+.wel_choise p {
+    font-size: 5vw;
+}
+.connect{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.browse{
+    border: none;
+    background-color: skyblue;
+    margin: 1vh;
+    border-radius: 6px;
+    padding: 1.5vh;
+}
+
+/* MAIN */
+
+main{
+    padding-top: 15vh;
+    margin-bottom: 5vh;
+}
+main h2{
+    text-align: center;
+    font-size: 3em;
+}
+.welcome{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 30px;
+}
+.welcome img {
+    width: 8vw;
+}
+.form_id{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.form_connect a{
+    font-size: 20px;
+}
+.deroul_connect{
+    display: none;
+}
+.derou_menu a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .connect .btn{
+    border: none;
+    appearance: none;
+    color:rgb(216, 255, 159) ;
+  }
+main input{
+    border-radius: 10px;
+    background-color:rgb(192, 255, 234);
+}  
+.submit_btn {
+    border-radius: 10px;
+    background-color: rgb(255, 192, 147);
+}
+.profil{
+    margin-bottom: 20px;
+}
+.pe label{
+    margin: 1vw;
+}
+.pe{
+    display: flex;
+    flex-wrap: inherit;
+}
+/* FOOTER */
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 0;
+    /* margin-top: 15vh; */
+    justify-content: space-between;
+  }
+  footer a{
+    font-size: 3vh;
+  }
+  .delete p{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  

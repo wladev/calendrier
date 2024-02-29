@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event index{% endblock %}
+
+{% block body %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First View</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!--<h1>Calendrier</h1>-->
+            <h2 class="currentYear"><button type="button" class="browse" id="browsePreviousYear">&Lt;</button><span id="currentYear"></span><button type="button" class="browse" id="browseNextYear">&Gt;</button></h2>
+            <h2 class="currentMonth"><button type="button" class="browse" id="browsePreviousMonth">&Lt;</button><span id="currentMonth"></span><button type="button" class="browse" id="browseNextMonth">&Gt;</button></h2>
+        </div>
+        <div class="userEvent" id="myEvent">
+            <div class="modal">
+                <span class="close">&times;</span>
+                <h3>Ajouter à l'agenda</h3>
+                <form action="" method="get" class="formEvent" id="formEvent">
+                    <p>
+                        <label for="">Libellé</label>
+                        <input type="text" id="libelle" value="">
+                        <input type="color" class="colorEvent" value="#3845FF">
+                    </p>
+                    <p>
+                        <label for="">Date de début</label>
+                        <input type="date" id="beginDate" value="">
+                    </p>
+                    <p>
+                        <label for="">Date de fin</label>
+                        <input type="date" id="endDate" value="">
+                    </p>
+                    <p>
+                        <label for="">Heure début</label>
+                        <input type="time" id="beginHour" value="">
+                    </p>
+                    <p>
+                        <label for="">Heure fin</label>
+                        <input type="time" id="endHour" value="">
+                    </p>
+                        <label for="visible">Visibilité</label>
+                        <span>
+                        <label>Moi</label>
+                        <input type="radio" name="visible" id="meOnly">
+                        <label>Tous</label>
+                        <input type="radio" name="visible" id="forAll" checked="checked">
+                        </span>
+                    <p>
+                    <label for="">Recurrence </label>
+                    <select name="" id="recurrence">
+                        <option value="1">Aucune</option>
+                        <option value="2">Tous les Jours</option>
+                        <option value="3">Toutes les semaines</option>
+                        <option value="4">Tous les Mois</option>
+                        <option value="5">Tous les Ans</option>
+                    </select>
+                    </p>
+                    <p>
+                        <input type="reset">
+                        <input type="submit" value="Valider">
+                    </p>
+                    <label id ="lblMessage"></label>
+                </form>
+              </div>
+        </div>
+        <div class="month" id="month">
+                
+        </div>
+    </div>
+    {# {{ include('event/_form.html.twig') }} #}
+    {% block script %}
+    <script src="{{asset('js/calendarView.js')}}"></script>
+    {% endblock %}
+</body>
+</html>
+    {# <h1>Event index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameEvent</th>
+                <th>SharingEvent</th>
+                <th>DateEvent</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.nameEvent }}</td>
+                <td>{{ event.sharingEvent }}</td>
+                <td>{{ event.dateEvent ? event.dateEvent|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_event_show', {'id': event.id}) }}">show</a>
+                    <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_event_new') }}">Create new</a> #}
+{% endblock %}
