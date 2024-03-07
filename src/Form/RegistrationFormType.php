@@ -55,6 +55,15 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            // ->add('roles', 'choice', array('choices' =>
+            //     array(
+            //         'ROLE_USER' => 'ROLE_USER',
+            //         'ROLE_ADMIN' => 'ROLE_ADMIN',
+            //         'ROLE_SUPER_ADMIN' => 'ROLE_SUPER_ADMIN',
+            //     ),
+            //     'required'  => true,
+            //     'multiple' => false
+            // ))
             ->add('profil', ChoiceType::class, [
                 'choices' => [
                     'profil' => "",

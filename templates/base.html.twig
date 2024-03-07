@@ -29,10 +29,16 @@
             <h1><a href="/">Calendrier</a></h1>
         </div>
         
-            
+            {% if app.user %}
+            <a href="{{path('app_logout')}}">
+                <img src="{{asset('img/compte.png')}}" alt="connexion">
+                </a>
+            {% else %}
                 <a href="{{path('app_login')}}">
                 <img src="{{asset('img/compte.png')}}" alt="connexion">
                 </a>
+            {% endif %}
+            
         </div>
         </header>
             {% endblock %}
@@ -47,7 +53,13 @@
                 <p class="footer_left">Connecté en tant que <strong>{{app.user.pseudo}}</strong>
             {% endif %}
             &copy; 2023 Wlad-dev</p>
+            {% if app.user %}
             <p class="footer_right"><a href="#">Mon compte</a></p>
+            {% else %}
+            <p class="footer_right"><a href="{{path('app_register')}}">Créer mon compte</a></p>
+            {% endif %}
+
+            
             </footer>
             {% endblock %}
         </div>

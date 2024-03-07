@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EventRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
@@ -27,6 +29,14 @@ class Event
 
     #[ORM\Column(length: 50)]
     private ?string $repeatEvent = null;
+
+    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'events')]
+    private Collection $userEvent;
+
+    public function __construct()
+    {
+        $this->userEvent = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -89,6 +99,30 @@ class Event
     public function setRepeatEvent(string $repeatEvent): static
     {
         $this->repeatEvent = $repeatEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Users>
+     */
+    public function getUserEvent(): Collection
+    {
+        return $this->userEvent;
+    }
+
+    public function addUserEvent(Users $userEvent): static
+    {
+        if (!$this->userEvent->contains($userEvent)) {
+            $this->userEvent->add($userEvent);
+        }
+
+        return $this;
+    }
+
+    public function removeUserEvent(Users $userEvent): static
+    {
+        $this->userEvent->removeElement($userEvent);
 
         return $this;
     }

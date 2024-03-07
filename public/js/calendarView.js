@@ -1,19 +1,20 @@
-function initFormulaire() {
-    document.getElementById("formEvent").onsubmit = valider
+// function initFormulaire() {
+//     document.getElementById("formEvent").onsubmit = valider
   
-  } /// initFormulaire
+//   } 
+  /// initFormulaire
   
     
-    function valider(event) {
-      console.log(event)
-      event.preventDefault()
-      let libelle = document.getElementById("libelle").value.trim()
-      if (libelle != "") {
-        document.getElementById("formEvent").submit()
-      } else {
-        document.getElementById("lblMessage").innerHTML = "Toutes les saisies sont obligatoires"
-      }
-    }
+    // function valider(event) {
+    //   console.log(event)
+    //   event.preventDefault()
+    //   let libelle = document.getElementById("libelle").value.trim()
+    //   if (libelle != "") {
+    //     document.getElementById("formEvent").submit()
+    //   } else {
+    //     document.getElementById("lblMessage").innerHTML = "Toutes les saisies sont obligatoires"
+    //   }
+    // }
   
   
     
@@ -119,22 +120,22 @@ function initFormulaire() {
     }
   
     // init and display current date into event from
-    const d = new Date()
-    let getMonthNow = d.getMonth()+1
-    // Add 0 on dates < 10
-      if(getMonthNow <10){
-        let dayNow = d.getDate()
-        if(d.getDate()<10){
-            dayNow = "0" + d.getDate()
-        }
-      let date = d.getFullYear() +"-0"+  getMonthNow + "-" + dayNow 
-      document.getElementById("beginDate").value = date
-      document.getElementById("endDate").value = date
-    }else{
-      let date = d.getFullYear() +"-"+  getMonthNow + "-" + d.getDate()
-      document.getElementById("beginDate").value = date
-      document.getElementById("endDate").value = date
-    }
+    // const d = new Date()
+    // let getMonthNow = d.getMonth()+1
+    // // Add 0 on dates < 10
+    //   if(getMonthNow <10){
+    //     let dayNow = d.getDate()
+    //     if(d.getDate()<10){
+    //         dayNow = "0" + d.getDate()
+    //     }
+    //   let date = d.getFullYear() +"-0"+  getMonthNow + "-" + dayNow 
+    //   document.getElementById("beginDate").value = date
+    //   document.getElementById("endDate").value = date
+    // }else{
+    //   let date = d.getFullYear() +"-"+  getMonthNow + "-" + d.getDate()
+    //   document.getElementById("beginDate").value = date
+    //   document.getElementById("endDate").value = date
+    // }
   
     // init and display current hour into event from
     const h = new Date()

@@ -37,7 +37,7 @@
             </div>
             </a>
             {% endif %}
-            {% if app.user %}
+            {% if app.user and app.user.profil == 1 %}
             
             <a href="{{path('app_event_new')}}">
             <div class="wel_choise">
